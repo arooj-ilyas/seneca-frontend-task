@@ -45,11 +45,6 @@
   left: calc(50% - 0px);
 }
 
-/* Hide radio input */
-input[type="radio"] {
-  display: none;
-}
-
 /* Selected text styling */
 .selected-text.active {
   position: relative;

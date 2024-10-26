@@ -14,6 +14,21 @@
 }
 
 .App-heading {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .App-heading {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+  .App-heading {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
