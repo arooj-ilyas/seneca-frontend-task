@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ToggleSwitch.css";
 
 interface ToggleSwitchOption {
@@ -9,25 +9,18 @@ interface ToggleSwitchOption {
 interface ToggleSwitchProps {
   options: ToggleSwitchOption[];
   name: string;
-  initialValue?: string;
-  onChange?: (value: string) => void;
+  selectedValue: string;
+  onChange: (name: string, value: string) => void;
 }
 
 const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
   options,
   name,
-  initialValue,
+  selectedValue,
   onChange,
 }) => {
-  const [selectedValue, setSelectedValue] = useState(
-    initialValue || options[0].value
-  );
-
   const handleChange = (value: string) => {
-    setSelectedValue(value);
-    if (onChange) {
-      onChange(value);
-    }
+    onChange(name, value);
   };
 
   return (

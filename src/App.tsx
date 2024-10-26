@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch";
 
 function App() {
-  const handleToggleChange = (value: string) => {
-    console.log("Selected option:", value);
+  const [toggleValues, setToggleValues] = useState({
+    toggle_1: "ribosomes",
+    toggle_2: "cytoplasm",
+    toggle_3: "partially_permeable_membrane",
+    toggle_4: "cellulose",
+  });
+
+  const handleToggleChange = (name: string, value: string) => {
+    setToggleValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
   };
+
+  const isCorrect =
+    toggleValues.toggle_1 === "ribosomes" &&
+    toggleValues.toggle_2 === "cytoplasm" &&
+    toggleValues.toggle_3 === "partially_permeable_membrane" &&
+    toggleValues.toggle_4 === "mitochondria";
+
   const toggle1Options = [
     { label: "Cell Wall", value: "cell_wall" },
     { label: "Ribosomes", value: "ribosomes" },
@@ -31,29 +48,31 @@ function App() {
       <h2 className="App-heading">An animal cell contains:</h2>
       <ToggleSwitch
         options={toggle1Options}
-        name="cell_toggle"
-        initialValue="ribosomes"
+        name="toggle_1"
+        selectedValue={toggleValues.toggle_1}
         onChange={handleToggleChange}
       />
       <ToggleSwitch
         options={toggle2Options}
-        name="cell_toggle"
-        initialValue="cytoplasm"
+        name="toggle_2"
+        selectedValue={toggleValues.toggle_2}
         onChange={handleToggleChange}
       />
       <ToggleSwitch
         options={toggle3Options}
-        name="cell_toggle"
-        initialValue="partially_permeable_membrane"
+        name="toggle_3"
+        selectedValue={toggleValues.toggle_3}
         onChange={handleToggleChange}
       />
       <ToggleSwitch
         options={toggle4Options}
-        name="cell_toggle"
-        initialValue="cellulose"
+        name="toggle_4"
+        selectedValue={toggleValues.toggle_4}
         onChange={handleToggleChange}
       />
-      <h2 className="App-heading">The answer is correct!</h2>
+      <h2 className="App-heading">
+        {isCorrect ? "The answer is correct!" : "The answer is incorrect."}
+      </h2>
     </div>
   );
 }
