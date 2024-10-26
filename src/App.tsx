@@ -16,6 +16,7 @@ function App() {
     toggle_4: "cellulose",
   });
   const [isCorrect, setIsCorrect] = useState(false);
+  const [almostCorrect, setIsAlmostCorrect] = useState(false);
 
   const handleToggleChange = (name: string, value: string) => {
     setToggleValues((prevValues) => ({
@@ -25,25 +26,29 @@ function App() {
   };
 
   useEffect(() => {
-    setIsCorrect(
-      toggleValues.toggle_1 === "ribosomes" &&
-        toggleValues.toggle_2 === "cytoplasm" &&
-        toggleValues.toggle_3 === "partially_permeable_membrane" &&
-        toggleValues.toggle_4 === "mitochondria"
-    );
+    const correctAnswers = [
+      toggleValues.toggle_1 === "ribosomes",
+      toggleValues.toggle_2 === "cytoplasm",
+      toggleValues.toggle_3 === "partially_permeable_membrane",
+      toggleValues.toggle_4 === "mitochondria",
+    ];
+
+    const correctCount = correctAnswers.filter(Boolean).length;
+    setIsCorrect(correctCount === 4);
+    setIsAlmostCorrect(correctCount === 3);
   }, [toggleValues]);
+
+  const containerClass = isCorrect
+    ? "App-container blue-gradient"
+    : almostCorrect
+    ? "App-container red-gradient"
+    : "App-container orange-gradient";
 
   return (
     <>
       {isCorrect && <div className="overlay" />}
 
-      <div
-        className={
-          isCorrect
-            ? "App-container blue-gradient"
-            : "App-container orange-gradient"
-        }
-      >
+      <div className={containerClass}>
         <h2 className="App-heading">An animal cell contains:</h2>
         <ToggleSwitch
           name="toggle_1"
