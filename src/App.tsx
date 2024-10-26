@@ -12,16 +12,14 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>An animal cell contains:</h1>
-        <ToggleSwitch
-          options={toggle1Options}
-          name="cell_toggle"
-          initialValue="ribosomes"
-          onChange={handleToggleChange}
-        />
-      </header>
+    <div className="App-container">
+      <h2 className="App-heading">An animal cell contains:</h2>
+      <ToggleSwitch
+        options={toggle1Options}
+        name="cell_toggle"
+        initialValue="ribosomes"
+        onChange={handleToggleChange}
+      />
     </div>
   );
 }
