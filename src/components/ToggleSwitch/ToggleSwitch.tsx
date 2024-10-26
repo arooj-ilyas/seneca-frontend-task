@@ -33,7 +33,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
         <div
           className={`selected ${
             selectedValue === options[0].value ? "left" : "right"
-          }`}
+          } ${isCorrect ? "correct-selected" : "incorrect-selected"}`}
         ></div>
 
         {options.map((option) => (

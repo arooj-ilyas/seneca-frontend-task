@@ -9,8 +9,15 @@
   width: 900px;
   height: 80px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  outline: solid 0.2rem #f8caa3;
   margin: 1rem;
+}
+
+.toggle-container.correct {
+  outline: solid 0.2rem rgba(165, 231, 226, 1);
+}
+
+.toggle-container.incorrect {
+  outline: solid 0.2rem #f8caa3;
 }
 
 /* Toggle switch option label styling */
@@ -25,7 +32,6 @@
 
 /* Styling for the selected option */
 .selected {
-  background-color: #f8caa3;
   border-radius: 40px;
   position: absolute;
   top: 0px;
@@ -33,6 +39,14 @@
   width: 450px;
   height: 80px;
   transition: left 0.3s;
+}
+
+/* Selected text styling */
+.selected-text.active {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  color: grey;
 }
 
 /* Option for left position */
@@ -45,10 +59,10 @@
   left: calc(50% - 0px);
 }
 
-/* Selected text styling */
-.selected-text.active {
-  position: relative;
-  text-align: center;
-  z-index: 1;
-  color: grey;
+.selected.correct-selected {
+  background-color: rgba(165, 231, 226, 1);
+}
+
+.selected.incorrect-selected {
+  background-color: #f8caa3;
 }
