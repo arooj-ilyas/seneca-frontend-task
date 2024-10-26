@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import "./ToggleSwitch.css";
 
-interface PlaceholderProps {
+interface ToggleSwitchOption {
+  label: string;
+  value: string;
+}
+interface ToggleSwitchProps {
+  options: ToggleSwitchOption[];
+  name: string;
+  initialValue?: string;
   onChange?: (value: string) => void;
 }
 
-const ToggleSwitch: React.FC<PlaceholderProps> = ({ onChange }) => {
-  const [selectedValue, setSelectedValue] = useState("answer1");
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
+  options,
+  name,
+  initialValue,
+  onChange,
+}) => {
+  const [selectedValue, setSelectedValue] = useState(initialValue);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSelectedValue(value);
@@ -16,25 +28,22 @@ const ToggleSwitch: React.FC<PlaceholderProps> = ({ onChange }) => {
   };
 
   return (
-    <div className="toggle-switch">
-      <input
-        type="radio"
-        id="switch_left"
-        name="switch_2"
-        value="answer1"
-        checked={selectedValue === "answer1"}
-        onChange={handleChange}
-      />
-      <label htmlFor="switch_left">Answer1</label>
-      <input
-        type="radio"
-        id="switch_right"
-        name="switch_2"
-        value="answer2"
-        checked={selectedValue === "answer2"}
-        onChange={handleChange}
-      />
-      <label htmlFor="switch_right">Answer2</label>
+    <div className="container">
+      <div className="toggle-switch">
+        {options.map((option) => (
+          <div key={option.value}>
+            <input
+              type="radio"
+              id={option.value}
+              name={name}
+              value={option.value}
+              checked={selectedValue === option.value}
+              onChange={handleChange}
+            />
+            <label htmlFor={option.value}>{option.label}</label>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
