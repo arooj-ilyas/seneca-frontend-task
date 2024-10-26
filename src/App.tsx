@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      {isCorrect && <div className="blue-gradient-overlay" />}
+      {isCorrect && <div className="overlay" />}
 
       <div
         className={
