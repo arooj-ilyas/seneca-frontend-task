@@ -1,9 +1,4 @@
 .App-container {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgba(246, 184, 104, 1),
-    rgba(238, 107, 45, 1)
-  );
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
@@ -11,6 +6,21 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.blue-gradient {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(118, 224, 194, 1),
+    rgba(89, 202, 218, 1)
+  );
+}
+
+.orange-gradient {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(246, 184, 104, 1),
+    rgba(238, 107, 45, 1)
+  );
 }
 
 .App-heading {

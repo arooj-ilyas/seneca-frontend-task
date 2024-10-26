@@ -10,6 +10,7 @@ interface ToggleSwitchProps {
   options: ToggleSwitchOption[];
   name: string;
   selectedValue: string;
+  isCorrect: boolean;
   onChange: (name: string, value: string) => void;
 }
 
@@ -17,6 +18,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
   options,
   name,
   selectedValue,
+  isCorrect,
   onChange,
 }) => {
   const handleChange = (value: string) => {
@@ -25,7 +27,9 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
 
   return (
     <div>
-      <div className="toggle-container">
+      <div
+        className={`toggle-container ${isCorrect ? "correct" : "incorrect"}`}
+      >
         <div
           className={`selected ${
             selectedValue === options[0].value ? "left" : "right"
