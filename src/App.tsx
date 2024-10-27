@@ -49,7 +49,7 @@ function App() {
       {isCorrect && <div className="overlay" />}
 
       <div className={containerClass}>
-        <h2 className="App-heading">An animal cell contains:</h2>
+        <h1 className="App-heading">An animal cell contains:</h1>
         <ToggleSwitch
           name="toggle_1"
           options={toggle1Options}
@@ -82,9 +82,13 @@ function App() {
           almostCorrect={almostCorrect}
           onChange={handleToggleChange}
         />
-        <h2 className="App-heading">
-          {isCorrect ? "The answer is correct!" : "The answer is incorrect."}
-        </h2>
+        <h1 className="App-heading">
+          {isCorrect
+            ? "The answer is correct!"
+            : almostCorrect
+            ? "The answer is almost correct!"
+            : "The answer is incorrect."}
+        </h1>
       </div>
     </>
   );

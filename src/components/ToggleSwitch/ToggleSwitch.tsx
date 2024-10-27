@@ -56,7 +56,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
           >
             <span
               className={`selected-text ${
-                selectedValue === option.value ? "active" : ""
+                selectedValue === option.value && "active"
               }`}
             >
               {option.label}
