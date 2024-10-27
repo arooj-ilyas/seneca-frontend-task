@@ -16,6 +16,10 @@
   outline: solid 0.2rem rgba(165, 231, 226, 1);
 }
 
+.toggle-container.almost {
+  outline: solid 0.2rem rgba(242, 203, 189, 1);
+}
+
 .toggle-container.incorrect {
   outline: solid 0.2rem #f8caa3;
 }
@@ -59,10 +63,14 @@
   left: calc(50% - 0px);
 }
 
-.selected.correct-selected {
+.selected.correct {
   background-color: rgba(165, 231, 226, 1);
 }
 
-.selected.incorrect-selected {
+.selected.almost {
+  background-color: rgba(242, 203, 189, 1);
+}
+
+.selected.incorrect {
   background-color: #f8caa3;
 }

@@ -55,6 +55,7 @@ function App() {
           options={toggle1Options}
           selectedValue={toggleValues.toggle_1}
           isCorrect={isCorrect}
+          almostCorrect={almostCorrect}
           onChange={handleToggleChange}
         />
         <ToggleSwitch
@@ -62,6 +63,7 @@ function App() {
           options={toggle2Options}
           selectedValue={toggleValues.toggle_2}
           isCorrect={isCorrect}
+          almostCorrect={almostCorrect}
           onChange={handleToggleChange}
         />
         <ToggleSwitch
@@ -69,6 +71,7 @@ function App() {
           options={toggle3Options}
           selectedValue={toggleValues.toggle_3}
           isCorrect={isCorrect}
+          almostCorrect={almostCorrect}
           onChange={handleToggleChange}
         />
         <ToggleSwitch
@@ -76,6 +79,7 @@ function App() {
           options={toggle4Options}
           selectedValue={toggleValues.toggle_4}
           isCorrect={isCorrect}
+          almostCorrect={almostCorrect}
           onChange={handleToggleChange}
         />
         <h2 className="App-heading">
