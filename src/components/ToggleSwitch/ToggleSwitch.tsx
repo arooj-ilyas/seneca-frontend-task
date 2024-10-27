@@ -23,10 +23,6 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
   almostCorrect,
   onChange,
 }) => {
-  const handleChange = (value: string) => {
-    onChange(name, value);
-  };
-
   const containerClass = isCorrect
     ? "toggle-container correct"
     : almostCorrect
@@ -49,15 +45,11 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
         ></div>
 
         {options.map((option) => (
-          <label key={option.value} className="toggle-labels">
-            <input
-              type="hidden"
-              name={name}
-              value={option.value}
-              checked={selectedValue === option.value}
-              onChange={() => handleChange(option.value)}
-              className="toggle-input"
-            />
+          <label
+            key={option.value}
+            className="toggle-labels"
+            onClick={() => onChange(name, option.value)}
+          >
             <span
               className={`selected-text ${
                 selectedValue === option.value && "active"
