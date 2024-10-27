@@ -49,11 +49,15 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
         ></div>
 
         {options.map((option) => (
-          <label
-            key={option.value}
-            className="toggle-labels"
-            onClick={() => handleChange(option.value)}
-          >
+          <label key={option.value} className="toggle-labels">
+            <input
+              type="hidden"
+              name={name}
+              value={option.value}
+              checked={selectedValue === option.value}
+              onChange={() => handleChange(option.value)}
+              className="toggle-input"
+            />
             <span
               className={`selected-text ${
                 selectedValue === option.value && "active"
