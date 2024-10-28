@@ -13,11 +13,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## UI/UX requirements:
 
-✅ The solution should lock once all correct answers have been selected so the toggles can no longer be switched
-✅ The toggles should animate between the two states
-✅ The background colour should change in proportion to how "correct" the answer is (see video attached)
-✅ The component should be responsive down to screens 320px wide
-✅ The component should be reusable & extendable, it should be able to accommodate the question changing
+- ✅ The solution should lock once all correct answers have been selected so the toggles can no longer be switched
+- ✅ The toggles should animate between the two states
+- ✅ The background colour should change in proportion to how "correct" the answer is (see video attached)
+- ✅ The component should be responsive down to screens 320px wide
+- ✅ The component should be reusable & extendable, it should be able to accommodate the question changing
 
 ## Assumptions/Limitations:
 
