@@ -45,21 +45,21 @@
 }
 
 .App-heading {
-  font-size: 4vw;
-  margin: 3%;
+  font-size: 150%;
+  margin: 7vh;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .App-heading {
     font-size: 5vw;
     margin: 5%;
   }
-}
+} */
 
 /* Small screens (mobile) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .App-heading {
     font-size: 6vw;
     margin: 10%;
   }
-}
+} */
