@@ -46,5 +46,29 @@
 
 .App-heading {
   font-size: 150%;
-  margin: 7vh;
+  margin-top: 7vh;
+}
+
+.App-subheading {
+  font-size: 100%;
+  margin: 2%;
+}
+
+.next-question {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: white;
+  background: #0b5ed7;
+  line-height: 1.15;
+  font-size: 16px;
+  transition: all 0.1s ease;
+}
+
+.next-question:hover {
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #0b5ed7;
 }

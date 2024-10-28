@@ -34,5 +34,30 @@ export const questions = [
       ],
     ],
   },
+  {
+    questionText: "What are the ideal work conditions",
+    correctAnswers: ["good_pay", "less_meetings", "free_coffee", "office_dog"],
+    toggleOptions: [
+      [
+        { label: "Bad Pay", value: "bad_pay" },
+        { label: "Good Pay", value: "good_pay" },
+      ],
+      [
+        {
+          label: "Less Meetings",
+          value: "less_meetings",
+        },
+        { label: "More Meetings", value: "more_meetings" },
+      ],
+      [
+        { label: "Expensive Coffee", value: "expensive_coffee" },
+        { label: "Free Coffee", value: "free_coffee" },
+      ],
+      [
+        { label: "Office Dog", value: "office_dog" },
+        { label: "Office Bear", value: "office_bear" },
+      ],
+    ],
+  },
   // Add more questions as needed
 ];
