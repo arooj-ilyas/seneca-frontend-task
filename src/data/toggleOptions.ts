@@ -35,27 +35,32 @@ export const questions = [
     ],
   },
   {
-    questionText: "What are the ideal work conditions",
-    correctAnswers: ["good_pay", "less_meetings", "free_coffee", "office_dog"],
+    questionText: "Why do I want to work for Seneca?",
+    correctAnswers: [
+      "great_culture",
+      "meaningful_mission",
+      "work_life_balance",
+      "collaborative",
+    ],
     toggleOptions: [
       [
-        { label: "Bad Pay", value: "bad_pay" },
-        { label: "Good Pay", value: "good_pay" },
+        { label: "Mean Coworkers", value: "mean_coworkers" },
+        { label: "Great Culture", value: "great_culture" },
       ],
       [
         {
-          label: "Less Meetings",
-          value: "less_meetings",
+          label: "Meaningful Mission",
+          value: "meaningful_mission",
         },
-        { label: "More Meetings", value: "more_meetings" },
+        { label: "Corporate Mission", value: "corporate_mission" },
       ],
       [
-        { label: "Expensive Coffee", value: "expensive_coffee" },
-        { label: "Free Coffee", value: "free_coffee" },
+        { label: "7-Day Working Weeks", value: "7-day_working_weeks" },
+        { label: "Work Life Balance", value: "work_life_balance" },
       ],
       [
-        { label: "Office Dog", value: "office_dog" },
-        { label: "Office Bear", value: "office_bear" },
+        { label: "Collaborative", value: "collaborative" },
+        { label: "Solo Missions", value: "solo_missions" },
       ],
     ],
   },

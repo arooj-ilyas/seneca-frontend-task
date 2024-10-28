@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Seneca Front-End Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The task is to make a component using React. The component is intended to test the user's knowledge of a topic, by having them move a series of toggles into the correct positions.
 
 ## Available Scripts
 
@@ -11,36 +11,22 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## UI/UX requirements:
 
-### `npm test`
+✅ The solution should lock once all correct answers have been selected so the toggles can no longer be switched
+✅ The toggles should animate between the two states
+✅ The background colour should change in proportion to how "correct" the answer is (see video attached)
+✅ The component should be responsive down to screens 320px wide
+✅ The component should be reusable & extendable, it should be able to accommodate the question changing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Assumptions/Limitations:
 
-### `npm run build`
+## Something new I learnt:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- TypeScript! While I have touched it before breifly in a small project, this was my first time building an entire end-to-end component in TypeScript
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Next steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Use lodash NPM package to randomize answer options and question order
+- Remove is incorrect on initial mount, only render once form is touched
+- Add a previous question state so users can go back and see questions they answered (keep it disabled if answered correctly, but give user option to 'skip')
