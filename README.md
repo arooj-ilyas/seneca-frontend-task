@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Once all correct options have been selected, user can no longer interact with the form/it is locked
 - The user can navigate to the next question once the question is answered correctly
 - The user can not go back or 'skip' if they don't know the answer
-  = Button stylings used from: https://copy-paste-css.com/
+- Button stylings used from: https://copy-paste-css.com/
 
 ## Something new I learnt:
 
