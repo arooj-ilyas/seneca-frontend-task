@@ -15,6 +15,9 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: normal;
 }
 
 .blue-gradient {
@@ -42,22 +45,21 @@
 }
 
 .App-heading {
-  font-size: 42px;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  font-size: 4vw;
+  margin: 3%;
 }
 
 @media (max-width: 768px) {
   .App-heading {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    font-size: 5vw;
+    margin: 5%;
   }
 }
 
 /* Small screens (mobile) */
 @media (max-width: 480px) {
   .App-heading {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    font-size: 6vw;
+    margin: 10%;
   }
 }

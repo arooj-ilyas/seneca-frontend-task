@@ -4,9 +4,8 @@
   align-items: center;
   background-color: transparent;
   border-radius: 100px;
-  padding: 0px;
   position: relative;
-  width: 900px;
+  width: 50vw;
   height: 80px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: 1rem;
@@ -28,8 +27,8 @@
 .toggle-labels {
   flex: 1;
   text-align: center;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 85%;
+  font-weight: 500;
   cursor: pointer;
   padding: 4%;
   color: white;
@@ -39,10 +38,9 @@
 .selected {
   border-radius: 40px;
   position: absolute;
-  top: 0px;
-  bottom: 5px;
-  width: 450px;
-  height: 80px;
+  width: 50%;
+  max-width: 450px;
+  height: 100%;
   transition: left 0.3s;
 }
 
