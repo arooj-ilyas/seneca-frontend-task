@@ -1,22 +1,38 @@
-export const toggle1Options = [
-  { label: "Cell Wall", value: "cell_wall" },
-  { label: "Ribosomes", value: "ribosomes" },
-];
+export interface QuestionOption {
+  label: string;
+  value: string;
+}
 
-export const toggle2Options = [
-  { label: "Cytoplasm", value: "cytoplasm" },
-  { label: "Chloroplast", value: "chloroplast" },
-];
-
-export const toggle3Options = [
+export const questions = [
   {
-    label: "Partially Permeable Membrane",
-    value: "partially_permeable_membrane",
+    questionText: "What does an animal cell contain?",
+    correctAnswers: [
+      "ribosomes",
+      "cytoplasm",
+      "partially_permeable_membrane",
+      "mitochondria",
+    ],
+    toggleOptions: [
+      [
+        { label: "Cell Wall", value: "cell_wall" },
+        { label: "Ribosomes", value: "ribosomes" },
+      ],
+      [
+        { label: "Cytoplasm", value: "cytoplasm" },
+        { label: "Chloroplast", value: "chloroplast" },
+      ],
+      [
+        {
+          label: "Partially Permeable Membrane",
+          value: "partially_permeable_membrane",
+        },
+        { label: "Impermeable Membrane", value: "impermeable_membrane" },
+      ],
+      [
+        { label: "Cellulose", value: "cellulose" },
+        { label: "Mitochondria", value: "mitochondria" },
+      ],
+    ],
   },
-  { label: "Impermeable Membrane", value: "impermeable_membrane" },
-];
-
-export const toggle4Options = [
-  { label: "Cellulose", value: "cellulose" },
-  { label: "Mitochondria", value: "mitochondria" },
+  // Add more questions as needed
 ];

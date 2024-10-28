@@ -1,41 +1,35 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch";
-import {
-  toggle1Options,
-  toggle2Options,
-  toggle3Options,
-  toggle4Options,
-} from "./data/toggleOptions";
+import { questions } from "./data/toggleOptions";
+
+const questionOne = questions[0].toggleOptions;
+const initialToggleValues = questionOne.map((option) => option[0].value);
 
 function App() {
-  const [toggleValues, setToggleValues] = useState({
-    toggle_1: "cell_wall",
-    toggle_2: "cytoplasm",
-    toggle_3: "partially_permeable_membrane",
-    toggle_4: "cellulose",
-  });
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [almostCorrect, setIsAlmostCorrect] = useState(false);
+  const [toggleValues, setToggleValues] =
+    useState<string[]>(initialToggleValues);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
+  const [almostCorrect, setIsAlmostCorrect] = useState<boolean>(false);
 
-  const handleToggleChange = (name: string, value: string) => {
-    setToggleValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
+  const handleToggleChange = (index: number, value: string) => {
+    const updatedValues = [...toggleValues];
+    updatedValues[index] = value;
+    setToggleValues(updatedValues);
   };
 
   useEffect(() => {
-    const correctAnswers = [
-      toggleValues.toggle_1 === "ribosomes",
-      toggleValues.toggle_2 === "cytoplasm",
-      toggleValues.toggle_3 === "partially_permeable_membrane",
-      toggleValues.toggle_4 === "mitochondria",
-    ];
+    const selectedAnswers: string[] = toggleValues;
+    const correctAnswers: string[] = questions[0].correctAnswers;
 
-    const correctCount = correctAnswers.filter(Boolean).length;
-    setIsCorrect(correctCount === 4);
-    setIsAlmostCorrect(correctCount === 3);
+    const correctCount: number = selectedAnswers.filter(
+      (selectedAnswer, index) => {
+        return selectedAnswer === correctAnswers[index];
+      }
+    ).length;
+
+    setIsCorrect(correctCount === correctAnswers.length);
+    setIsAlmostCorrect(correctCount === correctAnswers.length - 1);
   }, [toggleValues]);
 
   const containerClass = isCorrect
@@ -49,39 +43,18 @@ function App() {
       {isCorrect && <div className="overlay" />}
 
       <div className={containerClass}>
-        <h1 className="App-heading">An animal cell contains:</h1>
-        <ToggleSwitch
-          name="toggle_1"
-          options={toggle1Options}
-          selectedValue={toggleValues.toggle_1}
-          isCorrect={isCorrect}
-          almostCorrect={almostCorrect}
-          onChange={handleToggleChange}
-        />
-        <ToggleSwitch
-          name="toggle_2"
-          options={toggle2Options}
-          selectedValue={toggleValues.toggle_2}
-          isCorrect={isCorrect}
-          almostCorrect={almostCorrect}
-          onChange={handleToggleChange}
-        />
-        <ToggleSwitch
-          name="toggle_3"
-          options={toggle3Options}
-          selectedValue={toggleValues.toggle_3}
-          isCorrect={isCorrect}
-          almostCorrect={almostCorrect}
-          onChange={handleToggleChange}
-        />
-        <ToggleSwitch
-          name="toggle_4"
-          options={toggle4Options}
-          selectedValue={toggleValues.toggle_4}
-          isCorrect={isCorrect}
-          almostCorrect={almostCorrect}
-          onChange={handleToggleChange}
-        />
+        <h1 className="App-heading">{questions[0].questionText}</h1>
+        {questions[0].toggleOptions.map((options, index) => (
+          <ToggleSwitch
+            key={index}
+            options={options}
+            name={`toggle_${index}`}
+            selectedValue={toggleValues[index]}
+            isCorrect={isCorrect}
+            almostCorrect={almostCorrect}
+            onChange={(name, value) => handleToggleChange(index, value)}
+          />
+        ))}
         <h1 className="App-heading">
           {isCorrect
             ? "The answer is correct!"
