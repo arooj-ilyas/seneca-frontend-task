@@ -74,7 +74,7 @@ function App() {
         />
       ))}
       <h1 className="App-subheading">{feedbackMessage}</h1>
-      {currentQuestionIndex < questions.length - 1 && (
+      {isCorrect && currentQuestionIndex < questions.length - 1 && (
         <button className="next-question" onClick={handleNextQuestion}>
           Next Question
         </button>
