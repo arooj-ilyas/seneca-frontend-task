@@ -30,7 +30,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Something new I learnt:
 
-- TypeScript! While I have touched it before breifly in a small project, this was my first time building an entire end-to-end component in TypeScript
+- TypeScript! While I have touched it before briefly in a small project, this was my first time building an entire end-to-end component in TypeScript and it was a great learning experience
+- How to conditionally render based on more than 2 options! Correct, almost-correct and incorrect.
 
 ## Next steps:
 
